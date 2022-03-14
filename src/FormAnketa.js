@@ -7,7 +7,9 @@ export const FormAnketa = () => {
     <View>
       <Formik
         initialValues={{ anketa: "", vopros1: "", vopros2: "", vopros3: "" }}
-        onSubmit={(values) => {}}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
       >
         {(props) => (
           <View>
@@ -31,6 +33,7 @@ export const FormAnketa = () => {
               onChangeText={props.handleChange("vopros3")}
               value={props.values.vopros3}
             />
+            <Button title="Добавить" onPress={props.handleSubmit} />
           </View>
         )}
       </Formik>
