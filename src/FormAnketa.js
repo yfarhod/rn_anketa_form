@@ -1,10 +1,11 @@
 import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { TextInput, Button } from "react-native-paper";
 import { Formik } from "formik";
 
 export const FormAnketa = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Formik
         initialValues={{ anketa: "", vopros1: "", vopros2: "", vopros3: "" }}
         onSubmit={(values) => {
@@ -33,10 +34,19 @@ export const FormAnketa = () => {
               onChangeText={props.handleChange("vopros3")}
               value={props.values.vopros3}
             />
-            <Button title="Добавить" onPress={props.handleSubmit} />
+            <Button mode="contained" color="green" onPress={props.handleSubmit}>
+              Добавить
+            </Button>
           </View>
         )}
       </Formik>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 20,
+    backgroundColor: "white",
+  },
+});
