@@ -15,26 +15,35 @@ export const FormAnketa = () => {
         {(props) => (
           <View>
             <TextInput
+              style={styles.inputField}
               placeholder="номер анкеты"
               onChangeText={props.handleChange("anketa")}
               value={props.values.anketa}
             />
             <TextInput
+              style={styles.inputField}
               placeholder="ответ 1"
               onChangeText={props.handleChange("vopros1")}
               value={props.values.vopros1}
             />
             <TextInput
+              style={styles.inputField}
               placeholder="ответ 2"
               onChangeText={props.handleChange("vopros2")}
               value={props.values.vopros2}
             />
             <TextInput
+              style={styles.inputField}
               placeholder="ответ 3"
               onChangeText={props.handleChange("vopros3")}
               value={props.values.vopros3}
             />
-            <Button mode="contained" color="green" onPress={props.handleSubmit}>
+            <Button
+              style={styles.inputField}
+              mode="contained"
+              color="green"
+              onPress={props.handleSubmit}
+            >
               Добавить
             </Button>
           </View>
@@ -46,7 +55,10 @@ export const FormAnketa = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: 32,
     backgroundColor: "white",
+  },
+  inputField: {
+    margin: 10,
   },
 });
